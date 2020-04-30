@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "7b4e4591-122f-40e2-bc1f-74376850c087",
+		"name": "Agent API Test Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Agent Controller",
+			"item": [
+				{
+					"name": "Get All Agents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{Port}}/api/Agents",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{Port}}",
+							"path": [
+								"api",
+								"Agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Agent By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{Port}}/api/Agents/101",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{Port}}",
+							"path": [
+								"api",
+								"Agents",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Agent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": 101,\r\n    \"name\": \"John Smith\",\r\n    \"address\": \"123 Main Street #200\",\r\n    \"city\": \"Seattle\",\r\n    \"state\": \"WA\",\r\n    \"zipCode\": \"98101\",\r\n    \"tier\": 2,\r\n    \"phone\": {\r\n        \"id\": 1,\r\n        \"primary\": \"111-221-2345\",\r\n        \"mobile\": \"111-555-3211\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{Port}}/api/Agents/101",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{Port}}",
+							"path": [
+								"api",
+								"Agents",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Agent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": 44545,\r\n    \"name\": \"James Jones\",\r\n    \"address\": \"6665 E. West Avenue\",\r\n    \"city\": \"Granger Town\",\r\n    \"state\": \"WA\",\r\n    \"zipCode\": \"98222\",\r\n    \"tier\": 4,\r\n    \"phone\": {\r\n        \"primary\": \"555-123-1234\",\r\n        \"mobile\": \"555-321-4321\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{Port}}/api/Agents",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{Port}}",
+							"path": [
+								"api",
+								"Agents"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Customer Controller",
+			"item": [
+				{
+					"name": "Get All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{Port}}/api/Customers",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{Port}}",
+							"path": [
+								"api",
+								"Customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customers By Agent Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{Port}}/api/Customers/101",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{Port}}",
+							"path": [
+								"api",
+								"Customers",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"_id\": 2224,\r\n        \"agent_id\": 101,\r\n        \"guid\": \"6155ad7e-20a9-45a2-b49b-406a7b87a790\",\r\n        \"isActive\": true,\r\n        \"balance\": \"$2,619.80\",\r\n        \"age\": 46,\r\n        \"eyeColor\": \"green\",\r\n        \"name\": {\r\n            \"id\": 9,\r\n            \"first\": \"Harper\",\r\n            \"last\": \"Jones\"\r\n        },\r\n        \"company\": \"PHOTOBIN\",\r\n        \"email\": \"petersen.harper@photobin.tv\",\r\n        \"phone\": \"+1 (977) 533-3905\",\r\n        \"address\": \"285 Sutton Street, Crayne, Kentucky, 2753\",\r\n        \"registered\": \"2016-03-16T20:16:00\",\r\n        \"latitude\": 50.874561,\r\n        \"longitude\": -53.594529,\r\n        \"tags\": [\r\n            \"fred\",\r\n            \"gggg\",\r\n            \"amex\",\r\n            \"georgio\"\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{Port}}/api/Customers/2224",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{Port}}",
+							"path": [
+								"api",
+								"Customers",
+								"2224"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{Port}}/api/Customers/2224",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{Port}}",
+							"path": [
+								"api",
+								"Customers",
+								"2224"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"_id\": 7788565,\r\n        \"agent_id\": 101,\r\n        \"guid\": \"6155ad7e-20a9-45a2-b49b-406a7b87a790\",\r\n        \"isActive\": false,\r\n        \"balance\": \"$9,619.80\",\r\n        \"age\": 33,\r\n        \"eyeColor\": \"blueish\",\r\n        \"name\": {\r\n            \"first\": \"Arthur\",\r\n            \"last\": \"Scargill\"\r\n        },\r\n        \"company\": \"NUM\",\r\n        \"email\": \"test.test@test.com\",\r\n        \"phone\": \"+1 (555) 111-3333\",\r\n        \"address\": \"123, First Ave, NewTown, CO, 80000\",\r\n        \"registered\": \"2020-04-30T20:16:00\",\r\n        \"latitude\": 50.874561,\r\n        \"longitude\": -53.594529,\r\n        \"tags\": [\r\n            \"box\",\r\n            \"mine\",\r\n            \"strech\"\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{Port}}/api/Customers",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{Port}}",
+							"path": [
+								"api",
+								"Customers"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
