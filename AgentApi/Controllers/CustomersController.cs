@@ -41,8 +41,10 @@ namespace AgentApi.Controllers
         [HttpGet("{agentId}")]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomersByAgentId(int agentId)
         {
-
+            // get list of all the customers
             await _context.Names.ToListAsync();
+
+            // return those customers that match the agent id
             return await _context.Customers.Where(x => x.AgentId == agentId).ToListAsync();
         }
 
